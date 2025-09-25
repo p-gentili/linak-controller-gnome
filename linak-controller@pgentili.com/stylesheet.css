@@ -1,0 +1,16 @@
+/* Linak Desk Controller Extension Styles */
+
+/* Panel button styling */
+.panel-button .system-status-icon {
+    icon-size: 16px;
+}
+
+/* Menu item styling */
+.popup-menu-item {
+    spacing: 8px;
+}
+
+/* Preference window styling */
+.boxed-list {
+    border-radius: 8px;
+}
