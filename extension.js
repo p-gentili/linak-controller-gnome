@@ -48,12 +48,6 @@ class DeskIndicator extends PanelMenu.Button {
         });
         this.menu.addMenuItem(refreshItem);
 
-        // Add preferences item
-        const prefsItem = new PopupMenu.PopupMenuItem(_('Preferences'));
-        prefsItem.connect('activate', () => {
-            this._openPreferences();
-        });
-        this.menu.addMenuItem(prefsItem);
     }
 
     _loadLinakConfig() {
@@ -156,17 +150,6 @@ class DeskIndicator extends PanelMenu.Button {
             console.error('Failed to start linak-controller process:', e);
             Main.notify(_('Desk Controller'),
                       _(`Failed to start linak-controller: ${e.message}`));
-        }
-    }
-
-    _openPreferences() {
-        try {
-            const proc = Gio.Subprocess.new(
-                ['gnome-extensions', 'prefs', 'linak-controller@pgentili.com'],
-                Gio.SubprocessFlags.NONE
-            );
-        } catch (e) {
-            console.error('Failed to open preferences:', e);
         }
     }
 

@@ -26,7 +26,7 @@ linak-controller --help
 
 ## Requirements
 
-- GNOME Shell 42-46
+- GNOME Shell 42-47
 - [linak-controller](https://github.com/rhyst/linak-controller) Python package installed and in PATH
 - Existing linak-controller configuration at `~/.config/linak-controller/config.yaml`
 
@@ -64,9 +64,10 @@ Once published, you can install directly from [extensions.gnome.org](https://ext
 - Use "Refresh" to reload config changes
 
 ### Managing Positions
-- Right-click the desk icon and select "Preferences"
+- Open GNOME Extensions app or run `gnome-extensions prefs linak-controller@pgentili.com`
 - Add, edit, or remove favorite positions
 - Click "Save to linak-controller config" to apply changes
+- Use the "Refresh" menu item in the extension to reload the changes
 
 ### Configuration
 The extension reads positions from your existing linak-controller configuration file at `~/.config/linak-controller/config.yaml`. Example:

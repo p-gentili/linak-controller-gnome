@@ -87,7 +87,7 @@ cat ~/.config/linak-controller/config.yaml
 
 - **Runtime**: `linak-controller` command must be installed and in PATH
 - **Configuration**: `~/.config/linak-controller/config.yaml` must exist with `favourites:` section
-- **GNOME Shell**: Compatible with versions 42-46
+- **GNOME Shell**: Compatible with versions 42-47
 
 ## Key Implementation Details
 
