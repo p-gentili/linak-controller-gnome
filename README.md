@@ -32,16 +32,29 @@ linak-controller --help
 
 ## Installation
 
-1. Clone or download this repository
-2. Copy the extension to your extensions directory:
+### From Source
+
+1. Clone this repository:
    ```bash
-   cp -r linak-controller@pgentili.com ~/.local/share/gnome-shell/extensions/
+   git clone https://github.com/p-gentili/linak-controller-gnome.git
+   cd linak-controller-gnome
    ```
+
+2. Install the extension:
+   ```bash
+   make install
+   ```
+
 3. Enable the extension:
    ```bash
    gnome-extensions enable linak-controller@pgentili.com
    ```
+
 4. Restart GNOME Shell (Alt+F2, type 'r', press Enter on X11 or logout/login on Wayland)
+
+### From extensions.gnome.org
+
+Once published, you can install directly from [extensions.gnome.org](https://extensions.gnome.org) through your browser or GNOME Extensions app.
 
 ## Usage
 
@@ -69,16 +82,47 @@ favourites:
   focus: 300
 ```
 
+## Building
+
+To package the extension for upload to extensions.gnome.org:
+
+```bash
+make zip
+```
+
+This creates `linak-controller@pgentili.com.zip` ready for upload.
+
+### Available Make Targets
+
+- `make install` - Install extension locally for testing
+- `make uninstall` - Remove installed extension
+- `make zip` - Build zip file for distribution
+- `make clean` - Remove build artifacts
+
 ## Development
 
-### Testing
-```bash
-# View extension logs
-journalctl -f -o cat /usr/bin/gnome-shell
+### Local Testing
 
-# Test linak-controller integration
+1. Make your changes to the source files
+2. Install the updated extension:
+   ```bash
+   make install
+   ```
+3. Restart GNOME Shell (Alt+F2, type 'r' on X11 or logout/login on Wayland)
+4. View logs:
+   ```bash
+   journalctl -f -o cat /usr/bin/gnome-shell
+   ```
+
+### Testing linak-controller Integration
+
+```bash
+# Test linak-controller commands
 linak-controller --move-to sit
 linak-controller --move-to stand
+
+# Check current config
+cat ~/.config/linak-controller/config.yaml
 ```
 
 ### Contributing
@@ -90,7 +134,7 @@ linak-controller --move-to stand
 
 ## License
 
-[Add your chosen license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 

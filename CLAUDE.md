@@ -24,18 +24,40 @@ The extension follows the standard GNOME Shell extension structure and reads con
 
 - **Styling (`stylesheet.css`)**: Basic CSS for panel icon and menu styling
 
+## Project Structure
+
+Extension files are in the project root:
+- `extension.js` - Main extension code
+- `prefs.js` - Preferences window
+- `metadata.json` - Extension metadata (UUID: linak-controller@pgentili.com)
+- `stylesheet.css` - Styling
+- `LICENSE` - MIT License
+- `Makefile` - Build and install automation
+
 ## Development Commands
 
 ### Install Extension
 ```bash
-# Install extension to user directory
-cp -r linak-controller@gnome ~/.local/share/gnome-shell/extensions/
+# Install extension to user directory using Makefile
+make install
 
 # Enable extension
-gnome-extensions enable linak-controller@gnome
+gnome-extensions enable linak-controller@pgentili.com
 
 # Disable extension
-gnome-extensions disable linak-controller@gnome
+gnome-extensions disable linak-controller@pgentili.com
+
+# Uninstall extension
+make uninstall
+```
+
+### Building for Distribution
+```bash
+# Create zip file for upload to extensions.gnome.org
+make zip
+
+# Clean build artifacts
+make clean
 ```
 
 ### Testing
@@ -55,10 +77,11 @@ cat ~/.config/linak-controller/config.yaml
 ```
 
 ### Development Workflow
-1. Edit source files in `linak-controller@gnome/`
-2. Restart GNOME Shell: `Alt+F2`, type `r`, press Enter (X11) or logout/login (Wayland)
-3. Check logs for errors: `journalctl -f -o cat /usr/bin/gnome-shell`
-4. Use the "Refresh" menu item to reload config changes without restarting
+1. Edit source files in the project root (`extension.js`, `prefs.js`, etc.)
+2. Install updated extension: `make install`
+3. Restart GNOME Shell: `Alt+F2`, type `r`, press Enter (X11) or logout/login (Wayland)
+4. Check logs for errors: `journalctl -f -o cat /usr/bin/gnome-shell`
+5. Use the "Refresh" menu item to reload config changes without restarting
 
 ## Dependencies
 
