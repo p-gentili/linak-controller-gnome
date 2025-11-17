@@ -2,6 +2,9 @@
   "uuid": "linak-controller@pgentili.com",
   "name": "Linak/Idasen Desk Controller",
   "description": "Control your IKEA Idasen/Linak desk height with favorite positions from linak-controller config",
+  "donations": {
+      "opencollective": "pgentili"
+  },
   "version": 1,
   "shell-version": [
     "45",
